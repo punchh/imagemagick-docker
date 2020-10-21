@@ -11,6 +11,8 @@ RUN apt-get -y update && \
     yasm cmake \
     # libheif
     libde265-0 libde265-dev libjpeg62-turbo libjpeg62-turbo-dev x265 libx265-dev libtool \
+    # ruby 
+    ruby-full bundler pkg-config
     # IM
     libpng16-16 libpng-dev libjpeg62-turbo libjpeg62-turbo-dev libwebp6 libwebp-dev libgomp1 libwebpmux3 libwebpdemux2 ghostscript && \
     # Building libaom
@@ -37,5 +39,4 @@ RUN apt-get -y update && \
     apt-get remove --autoremove --purge -y gcc make cmake curl g++ yasm git autoconf pkg-config libpng-dev libjpeg62-turbo-dev libwebp-dev libde265-dev libx265-dev && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /ImageMagick
-
-ENTRYPOINT ["convert"]
+CMD ['bash']
